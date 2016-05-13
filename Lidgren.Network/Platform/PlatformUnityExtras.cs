@@ -1,23 +1,27 @@
 ﻿﻿﻿#if UNITY
+using System;
 using UnityEngine;
 
 namespace Lidgren.Network
 {
 	public partial class NetBuffer
 	{
+
+		[CLSCompliant(false)]
 		public void Write(Vector2 vector)
 		{
 			Write(vector.x);
 			Write(vector.y);
 		}
 
+		[CLSCompliant(false)]
 		public Vector2 ReadVector2()
 		{
 			return new Vector2(
 				x: ReadSingle(),
 				y: ReadSingle());
 		}
-
+		[CLSCompliant(false)]
 		public void Write(Vector3 vector)
 		{
 			Write(vector.x);
@@ -25,6 +29,7 @@ namespace Lidgren.Network
 			Write(vector.z);
 		}
 
+		[CLSCompliant(false)]
 		public Vector3 ReadVector3()
 		{
 			return new Vector3(
@@ -33,6 +38,7 @@ namespace Lidgren.Network
 				z: ReadSingle());
 		}
 
+		[CLSCompliant(false)]
 		public void Write(Vector4 vector)
 		{
 			Write(vector.x);
@@ -41,6 +47,7 @@ namespace Lidgren.Network
 			Write(vector.w);
 		}
 
+		[CLSCompliant(false)]
 		public Vector4 ReadVector4()
 		{
 			return new Vector4(
@@ -50,6 +57,7 @@ namespace Lidgren.Network
 				w: ReadSingle());
 		}
 
+		[CLSCompliant(false)]
 		public void Write(Quaternion quaternion)
 		{
 			Write(quaternion.x);
@@ -58,6 +66,7 @@ namespace Lidgren.Network
 			Write(quaternion.w);
 		}
 
+		[CLSCompliant(false)]
 		public Quaternion ReadQuaternion()
 		{
 			return new Quaternion(
@@ -67,6 +76,7 @@ namespace Lidgren.Network
 				w: ReadFloat());
 		}
 
+		[CLSCompliant(false)]
 		public void WriteRgbColor(Color32 color)
 		{
 			Write(color.r);
@@ -74,6 +84,7 @@ namespace Lidgren.Network
 			Write(color.b);
 		}
 
+		[CLSCompliant(false)]
 		public Color32 ReadRgbColor()
 		{
 			return new Color32(
@@ -83,6 +94,7 @@ namespace Lidgren.Network
 				a: byte.MaxValue);
 		}
 
+		[CLSCompliant(false)]
 		public void WriteRgbaColor(Color32 color)
 		{
 			Write(color.r);
@@ -91,6 +103,7 @@ namespace Lidgren.Network
 			Write(color.a);
 		}
 
+		[CLSCompliant(false)]
 		public Color32 ReadRgbaColor()
 		{
 			return new Color32(
@@ -100,12 +113,14 @@ namespace Lidgren.Network
 				a: ReadByte());
 		}
 
+		[CLSCompliant(false)]
 		public void Write(Ray ray)
 		{
 			Write(ray.direction);
 			Write(ray.origin);
 		}
 
+		[CLSCompliant(false)]
 		public Ray ReadRay()
 		{
 			return new Ray(
@@ -113,12 +128,14 @@ namespace Lidgren.Network
 				origin: ReadVector3());
 		}
 
+		[CLSCompliant(false)]
 		public void Write(Plane plane)
 		{
 			Write(plane.normal);
 			Write(plane.distance);
 		}
 
+		[CLSCompliant(false)]
 		public Plane ReadPlane()
 		{
 			return new Plane(
@@ -126,6 +143,7 @@ namespace Lidgren.Network
 				d: ReadSingle());
 		}
 
+		[CLSCompliant(false)]
 		public void Write(Matrix4x4 matrix)
 		{
 			Write(matrix.m00);
@@ -146,6 +164,7 @@ namespace Lidgren.Network
 			Write(matrix.m33);
 		}
 
+		[CLSCompliant(false)]
 		public Matrix4x4 ReadMatrix4X4()
 		{
 			return new Matrix4x4
@@ -169,6 +188,7 @@ namespace Lidgren.Network
 			};
 		}
 
+		[CLSCompliant(false)]
 		public void Write(Rect rect)
 		{
 			Write(rect.xMin);
@@ -177,6 +197,7 @@ namespace Lidgren.Network
 			Write(rect.height);
 		}
 
+		[CLSCompliant(false)]
 		public Rect ReadRect()
 		{
 			return new Rect(
